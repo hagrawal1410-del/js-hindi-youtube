@@ -77,7 +77,7 @@ let str3 = str1 + str2
 // console.log("1" + 2 +2);    // To Primitive guideline in ecmascript     decided by konsi value phle aa rhi h
 // console.log(1 + 2 +  "2");// in real life use parenthesis not use this messy code
 
-console.log(true);  // +true => 1
+// console.log(true);  // +true => 1
 //true => true
 //+"" => 0  //"" => 0
 
@@ -85,5 +85,9 @@ let num1 , num2 , num3
 num1 = num2 = num3 = 2+2   // not consistency  not readible //not use this way
 
 let gamecounter = 100
+gamecounter++;   //alsp write as ++gamecounter
+console.log(gamecounter);
+//prefix and profix js mdn
+//https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
 
 
