@@ -7,11 +7,12 @@ console.log("Hello world")
 
 let name = "Himanshi"
 let age = 20
-let isLoggedIn = True
+let isLoggedIn = false // true is not defined
+let state;
 
 // number of Primitive datatypes  1. number => 2^53 , 2.bigint 3. string =>" " 4.Boolean => true/false
 //5. null => (standalone value)   6. undefined =>   7. symbol(find uniqueness)
 
-// object 
+// object //type of null is object. // undefined type is undefined.
 
-console.log(typeof "himanshi")
+console.log(typeof "himanshi");
