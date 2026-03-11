@@ -1,0 +1,43 @@
+function sayMyName(){
+    console.log("H");
+    console.log("I");
+    console.log("M");
+    console.log("A");
+    console.log("N");
+    console.log("S");
+    console.log("H");
+    console.log("I");
+}
+//sayMyNAme - reference (rhta hai) (): execution
+
+//sayMyName()
+
+// function addtwonumbers(number1, number2){    //parameter
+//     //check datatype
+//     console.log(number1 + number2);
+// }
+
+function addtwonumbers(number1, number2){   
+    //check datatype
+    let result = number1 + number2
+    return result  // return number1 + number2
+}
+
+addtwonumbers(3, 7)    //arguments (3, 7)
+const result = addtwonumbers(3, 5)  //undefined in first code
+// console.log(result);  //what we are returning
+
+// function loginmessage(username){
+//     return`${username} just logged in`
+// }
+// console.log(loginmessage("Hitesh")); //if no value pass then gives undefined
+
+//"" (empty string)  and undefined are considered as false value
+function loginmessage(username){
+    if(username === undefined){   //if(!username)
+        console.log("please enter username");
+        return
+    }
+    return`${username} just logged in`
+}
+console.log(loginmessage("himanshi"));
