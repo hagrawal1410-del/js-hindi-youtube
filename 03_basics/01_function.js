@@ -41,3 +41,23 @@ function loginmessage(username){
     return`${username} just logged in`
 }
 console.log(loginmessage("himanshi"));
+
+// ****MultipleArguments
+//...  rest and spread operator
+function calculateCartPrice(...num1){    //gives an array //rest operator
+    return num1
+}
+//console.log(calculateCartPrice(200,54200,845));
+
+//how to pass object in function
+const User = {
+    username = "himanshi"
+    price: 199
+}
+function handleobject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+handleobject(user)
+// handleobject({
+      username:"sam"
+})
