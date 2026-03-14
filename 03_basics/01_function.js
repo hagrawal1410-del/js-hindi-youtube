@@ -44,7 +44,7 @@ console.log(loginmessage("himanshi"));
 
 // ****MultipleArguments
 //...  rest and spread operator
-function calculateCartPrice(...num1){    //gives an array //rest operator
+function calculateCartPrice( ...num1){    //gives an array //rest operator
     return num1
 }
 //console.log(calculateCartPrice(200,54200,845));
@@ -59,5 +59,14 @@ function handleobject(anyobject){
 }
 handleobject(user)
 // handleobject({
-      username:"sam"
+     // username:"sam"
 })
+
+//how to pass array in function
+const myNewArray = [200, 400, 100, 600]
+
+function returnsecondValue(getArray){
+    return getArray[1]
+}
+console.log(returnsecondValue(myNewArray));
+console.log(returnsecondValue([200, 400,100,600]));   //other way of 1st one
