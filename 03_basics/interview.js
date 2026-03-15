@@ -36,15 +36,14 @@ let result2 = addNum(10, 2)
 // calls  stack: 
 
           
-one() -> |  one()          |  -> one()
-         | global execution|
-         |_________________|
+// one() -> |  one()          |  -> one()
+//          | global execution|
+//          |_________________|
 
-          //nested function call
-         |   three()       |
-         |   Two()         |
-         |  one()          |  
-         | global execution|
-         |_________________|
-last in first out   // sbse phle three() out hoga
-//
+//           //nested function call
+//          |   three()       |
+//          |   Two()         |
+//          |  one()          |  
+// //          | global execution|
+//          |_________________|
+// last in first out   // sbse phle three() out hoga
