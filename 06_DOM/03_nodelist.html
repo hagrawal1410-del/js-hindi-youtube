@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodelist</title>
+</head>
+<body style= "background-color: #212121; color: #fff;">
+    //set custom attribute </br>
+    // give key Value Pair('key', 'value') </br>
+    // in script div is inside memory we have to attach it </br>
+    // in class , id, innerText , first reference lekr aata h then overwrite krta h. that's why prefer setaatribute , direct set krta h </br>
+    // use document.createTextNode // appendChild </br>
+    //attach // document.body.appendChild(name)
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = 'main'
+    // div.id = 'myId'
+    div.id = Math.round(Math.random() *10 +1)
+    
+    div.setAttribute('title', "generated title")
+    div.style.backgroundColor = 'orange'
+    div.style.padding = "12px"
+    // div.inner = 'Chai aur Code'
+    const addText = document.createTextNode("Chai aur Code")
+    div.appendChild(addText)
+    document.body.appendChild(div)
+</script>
+</html>
