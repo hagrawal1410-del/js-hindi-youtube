@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+     // javascript is sequentially run program with some exception(browser events activate by something like keyboard touch , mouse scrolling) </br>
+     //onclick = alert; is not a feasible approach bcz when scaling create problem but in react scalable ,instead use script onclick method </br>
+     //onclick provide less features so use event listeners(provide also propogation ability) </br>
+     //addEventListener('click , function(){}, false') , third parameter by default false so no need to write
+     //M4- attachEvent (when internetexplorer)
+     //jquery - oneventlistner
+     //we get browser and environment event </br>
+     //read events :type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget,clientX, clientY, screenX, screenY,altkey, ctrlkey, shiftkey, keyCode </br>
+     //event propogation :-1. Event bubbling(inside se outside) when both false    2.event Capturing(outside se inside) when bothfalese true </br>
+     // if one true and one false then jo true hoga vo phle print hoga
+    <h2>Amazing image</h2>
+    <div>
+        <ul id = "images">
+           <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>   //onclick="alert('owl')" write inside 
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" height="200px" id ="unsplash" src="https://images.unsplash.com/photo-1778434505577-28b8e26384f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D" alt="" ></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+    <script>
+        // document.getElementById('owl').onclick = function(){
+            // alert('owl click')
+        // }
+
+        // document.getElementById('owl').addEventListener('click', function(){
+        //     alert('owl click')
+
+        // document.getElementById('owl').addEventListener('click', function(e){
+        //     console.log(e);  // get pointerevent which is a object(timestamo, view, height, width)
+        
+        // },false)
+
+        // event propogation
+        document.getElementById('images').addEventListener('click', function(e){
+            console.log("click inside ul");  
+        
+        },false)
+
+
+        // document.getElementById('owl').addEventListener('click', function(e){
+        //     console.log("clicked owl");  // first clicked owl then click inside ul   //Bubbling(inside se outside)
+        
+        // },false)
+
+
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log("clicked owl"); 
+            e.stopPropagation() // bubble hokr upper element pr nhi jaayega // inner and outer ko alg krta hai 
+        },false)
+
+
+        //prevent default  (change default setting)
+        document.getElementById("google").addEventListener('click', function(e){
+            e.preventDefault()
+             e.stopPropagation()
+            console.log("google clicked");
+        })
+
+
+        //project type(image dissaper on click)
+        document.querySelector('.images').addEventListener('click', function(e){
+            console.log(e);
+            
+        })
+        
+       
+
+        
+        </script>
+</body>
+</html>
