@@ -13,7 +13,12 @@
      //M4- attachEvent (when internetexplorer)
      //jquery - oneventlistner
      //we get browser and environment event </br>
-     //read events :type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget,clientX, clientY, screenX, screenY,altkey, ctrlkey, shiftkey, keyCode </br>
+     <ul>event type:-
+        <li>type</li>    <li>timestamp</li>     <li>defaultPrevented</li>    <li>target</li>
+        <li>toElement</li>    <li>srcElement</li>    <li>currentTarget</li>    <li>clientX</li>
+        <li>clientY</li>    <li> screenX</li>    <li>screenY</li>   <li>altkey</li>
+        <li>ctrlkey</li>   <li>shiftkey</li>   <li>keyCode</li>
+     </ul> 
      //event propogation :-1. Event bubbling(inside se outside) when both false    2.event Capturing(outside se inside) when bothfalese true </br>
      // if one true and one false then jo true hoga vo phle print hoga
     <h2>Amazing image</h2>
@@ -41,10 +46,10 @@
         // },false)
 
         // event propogation
-        document.getElementById('images').addEventListener('click', function(e){
-            console.log("click inside ul");  
+        // document.getElementById('images').addEventListener('click', function(e){
+        //     console.log("click inside ul");  
         
-        },false)
+        // },false)
 
 
         // document.getElementById('owl').addEventListener('click', function(e){
@@ -53,29 +58,43 @@
         // },false)
 
 
-        document.getElementById('owl').addEventListener('click', function(e){
-            console.log("clicked owl"); 
-            e.stopPropagation() // bubble hokr upper element pr nhi jaayega // inner and outer ko alg krta hai 
-        },false)
+        // document.getElementById('owl').addEventListener('click', function(e){
+        //     console.log("clicked owl"); 
+        //     e.stopPropagation() // bubble hokr upper element pr nhi jaayega // inner and outer ko alg krta hai 
+        // },false)
 
 
-        //prevent default  (change default setting)
-        document.getElementById("google").addEventListener('click', function(e){
-            e.preventDefault()
-             e.stopPropagation()
-            console.log("google clicked");
-        })
+        // prevent default  (change default setting)
+        // document.getElementById("google").addEventListener('click', function(e){
+        //     e.preventDefault()
+        //      e.stopPropagation()
+        //     console.log("google clicked");
+        // })
 
 
-        //project type(image dissaper on click)
-        document.querySelector('.images').addEventListener('click', function(e){
-            console.log(e);
+        //project type(image dissaper on click)  
+        //remove whole li otherwise bullet point rh jaayega
+        // document.querySelector('#images').addEventListener('click', function(e){
+        //     console.log(e.target.parentNode);
+        //     let removeit = e.target.parentNode
+        //     removeit.remove()
+        //     // removeit.parentNode.removeChild(removeit)
+            
+        // })
+
+
+        // on clicking list item whole ul deleted 
+          document.querySelector('#images').addEventListener('click', function(e){
+            console.log(e.target.tagName);
+            if (e.target.tagName === 'IMG') {
+                console.log(e.target.id)
+                 let removeit = e.target.parentNode
+                 removeit.remove()
+            }
+           
+            
             
         })
-        
-       
-
-        
-        </script>
+         </script>
 </body>
 </html>
