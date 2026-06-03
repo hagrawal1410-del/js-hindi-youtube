@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+   <h1>Chai aur code</h1>
+   <button id="start"> START</button>
+   <button id="stop"> STOP</button>
+   <button id="stophii">STOP HII</button>
+ 
+</body>
+<script>
+    //functions
+    //clear interval , clear timeout
+    setTimeout(function(){
+        console.log("Himanshi");
+    }, 1000) //  function setTimeout(handler: TimerHandler, timeout?: number, ...arguments: any[]): number// handler calllback function jiska name nhi hai
+    //call api // browser ke through milte hain  // print only one time
+
+    const sayHimanshi = function(){
+        console.log("himanshi");
+        }
+    setTimeout(sayHimanshi,5000)
+
+    const changeText = function (){
+            document.querySelector('h1').innerHTML = 'Best Js Series'
+        }
+    const changeme = setTimeout(changeText , 2000)
+    
+
+    //cleartimeout needs reference, cleartimeout // cleartimeout delete everything in callstack .
+    
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(changeme)
+        console.log("Stopped")
+    })
+
+
+// set interval 
+    const sayDate = function(str){
+        console.log(str);
+    }
+   const interval = setInterval(sayDate,1000,"himanshi" )   // himanshi parameter value 
+
+    // how to stop
+    document.querySelector('#stophii').addEventListener('click', function(){
+        clearInterval(interval)
+        console.log("Interval stop");
+        
+    })
+
+
+
+
+</script>
+</html>                                 
